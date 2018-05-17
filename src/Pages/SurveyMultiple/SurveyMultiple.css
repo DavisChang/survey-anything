@@ -1,0 +1,226 @@
+.SurveyMultiple {
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+  font-weight: 300;
+  padding: 16px 20px;
+  position: relative;
+  text-align: left;
+  top: 1px;
+  transition: top 200ms;
+  white-space: nowrap;
+}
+
+.title {
+  font: 500 18px/1 Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  margin: 10px 0 20px;
+}
+
+.desc {
+  font: 500 14px/1 Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  color: rgba(0,0,0,0.54);
+  margin: 20px 0 10px;
+}
+
+.options {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+ol {
+  list-style-type:  none;
+  padding: 0;
+}
+
+li:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+/* Custom Input */
+.custom-input {
+  display:flex;
+  flex-wrap: nowrap; 
+  height:20px;
+  font-size: 12px;
+}
+
+/* Etiqueta de texto */ 
+.custom-input .custom-input-label {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap:nowrap;
+  font: 500 15px/20px Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  padding-left: 10px;
+  cursor: pointer;
+  color: rgba(0,0,0,0.65);
+}
+
+/* Elemento input */ 
+.custom-input input {
+  display: none !important; 
+  opacity:0;
+  width:0; 
+}
+
+/* Elemento de estado */ 
+.custom-input .check-radio {
+  cursor:pointer;
+  width:18px;
+  height:18px;
+  border: 2px solid #a9a9a9; 
+  border-radius: 50%; 
+}
+
+.custom-input .check-checkbox {
+  cursor:pointer;
+  user-select:none;
+  width:18px;
+  height:18px;
+  border: 2px solid #a9a9a9; 
+  border-radius: 2px;
+}
+
+/* Elemento deshabilitado */ 
+.custom-input input:disabled ~ .check-radio,
+.custom-input input:disabled ~ .check-checkbox,
+.custom-input input:disabled ~ .custom-input-label {
+  cursor: default; 
+}
+
+.custom-input input:disabled ~ .check-radio,
+.custom-input input:disabled ~ .check-checkbox {
+  background-color: #e9ecef;
+}
+
+.custom-input input:disabled ~ .custom-input-label {
+  opacity: 0.6; 
+}
+
+/* Elemento seleccionado */ 
+.custom-input input:checked ~ .check-radio,
+.custom-input input:checked ~ .check-checkbox {
+  background-color: #fff;
+  border-color: #777777;
+}
+
+.custom-input input:checked ~ .check-checkbox {
+  background-color: #777777; 
+}
+
+/* Elemento seleccionado y deshabilitado */ 
+.custom-input input:checked:disabled ~ .check-radio {
+  border: 2px solid #a9a9a9; 
+}
+
+.custom-input input:checked:disabled ~ .check-checkbox {
+  background-color: #e9ecef; 
+  border: 2px solid #a9a9a9; 
+}
+
+/* Parte :after del elemento de estado  */ 
+.custom-input .check-radio:after, 
+.custom-input .check-checkbox:after {
+  content: "";
+  position: relative;
+  display: none;
+}
+
+/* Al seleccionar el input mediante la etiqueta, se 
+   muestra la parte :after del elemento de estado */ 
+.custom-input input:checked ~ .check-radio:after,
+.custom-input input:checked ~ .check-checkbox:after {
+  display: block; 
+}
+
+/* Elemento de radio */ 
+.custom-input input:checked:disabled ~ .check-radio:after {
+  background-color: #333;
+  top:2px;
+  left:2px;
+  width:12px;
+  height:12px;
+  border-radius:50%; 
+}
+
+.custom-input .check-radio:after {
+  background-color: #777777; 
+  top:2px;
+  left:2px;
+  width:12px;
+  height:12px;
+  border-radius:50%; 
+}
+
+/* Elemento de checkbox */ 
+.custom-input input:checked:disabled ~ .check-checkbox:after {
+  left: 4px;
+  top: -1px;
+  width: 7px;
+  height:12px; 
+  border-radius: 2px;
+  border: solid #333;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.custom-input .check-checkbox:after {
+  left: 4px;
+  top: -1px;
+  width: 7px;
+  height:12px; 
+  border-radius: 2px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg); 
+}
+
+.button {
+  position: relative;
+  padding-bottom: 50px;
+}
+.animate {
+  transition: all 0.1s;
+}
+
+.action-button {
+  position: absolute;
+  padding: 10px 25px;
+  float: left;
+  border-radius: 10px;
+  font: 500 16px/1.2 Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  color: #FFF;
+  text-decoration: none;  
+  cursor: pointer;
+}
+
+.blue {
+  background-color: #2196f3;
+  border-bottom: 5px solid #2980B9;
+  text-shadow: 0px -2px #2980B9;
+}
+.blue:hover {
+  background-color: #1e88e5;
+}
+.red {
+  background-color: #E74C3C;
+  border-bottom: 5px solid #BD3E31;
+  text-shadow: 0px -2px #BD3E31;
+}
+
+.green {
+  background-color: #82BF56;
+  border-bottom: 5px solid #669644;
+  text-shadow: 0px -2px #669644;
+}
+
+.yellow {
+  background-color: #F2CF66;
+  border-bottom: 5px solid #D1B358;
+  text-shadow: 0px -2px #D1B358;
+}
+
+.action-button:active {
+  transform: translate(0px,5px);
+  border-bottom: 1px solid;
+}

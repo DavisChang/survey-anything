@@ -1,0 +1,58 @@
+.SurveyNPS {
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+  font-weight: 300;
+  padding: 16px 20px;
+  position: relative;
+  text-align: left;
+  top: 1px;
+  transition: top 200ms;
+  white-space: nowrap;
+}
+
+.title {
+  font: 500 18px/1 Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  margin: 10px 0 20px;
+}
+
+.desc {
+  font: 500 14px/1 Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  color: rgba(0,0,0,0.54);
+  margin: 30px 0;
+}
+
+.rating {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.star {
+  background-size: contain;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.rating-star {
+  background-image: url(../../images/2x_web_ic_star_outline_grey600_24dp.png);
+  background-repeat: no-repeat;
+}
+
+.rating-star-black {
+  background-image: url(../../images/2x_web_ic_star_black_24dp.png);
+  background-repeat: no-repeat;
+}
+
+tr {
+  display: flex;
+  justify-content: space-between;
+}
+
+td {
+  font: 500 14px/1 Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  color: rgba(0,0,0,0.54);
+}

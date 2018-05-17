@@ -1,0 +1,6 @@
+.adminLink {
+  text-decoration: none;
+  font: 500 30px/1.2 Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  color: rgba(0,0,0,0.9);
+  cursor: pointer;
+}
