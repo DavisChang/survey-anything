@@ -122,7 +122,15 @@ body {
   color: #ff5a5a;
 }
 
+.title-link a {
+  text-decoration: underline;
+  color: #00B5E2;
+}
 
+.title-link a:hover {
+  text-decoration: underline;
+  color: #0A8ECB;
+}
 
 
 
