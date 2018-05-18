@@ -17,17 +17,17 @@ const data = [
 ];
 
 const data2 = [
-  {name: '1星', ans: 400},
-  {name: '2星', ans: 221},
-  {name: '2星', ans: 221},
-  {name: '3星', ans: 229},
-  {name: '4星', ans: 200},
-  {name: '5星', ans: 281},
-  {name: '6星', ans: 500},
-  {name: '7星', ans: 100},
-  {name: '8星', ans: 181},
-  {name: '9星', ans: 2500},
-  {name: '10星', ans: 2100},
+  {name: '1星', man: 200, woman: 200},
+  {name: '2星', man: 121, woman: 100},
+  {name: '2星', man: 100, woman: 121},
+  {name: '3星', man: 100, woman: 129},
+  {name: '4星', man: 50, woman: 150},
+  {name: '5星', man: 200, woman: 81},
+  {name: '6星', man: 400, woman: 100},
+  {name: '7星', man: 75, woman: 25},
+  {name: '8星', man: 151, woman: 30},
+  {name: '9星', man: 2000, woman: 500},
+  {name: '10星', man: 1400, woman: 700},
 ];
 
 const Report = ({ match }) => (
@@ -54,16 +54,18 @@ const Report = ({ match }) => (
     <Col xs={10}>
       <Row>
         <Col xs="6" style={{ padding: '10px' }}>
-          <h3>NPS分數</h3>
+          <h3>NPS Answer Report</h3>
           <ResponsiveContainer width="100%" height={400}>
-            <LineChart data={data}>
-              <CartesianGrid strokeDasharray="3 3"/>
-              <XAxis dataKey="name" padding={{left: 30, right: 30}}/>
-              <YAxis/>
-              <Tooltip/>
-              <Legend />
-              <Line type="monotone" dataKey="nps" stroke="#8884d8" activeDot={{r: 8}}/>
-            </LineChart>
+            <BarChart data={data2}
+                  margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+             <CartesianGrid strokeDasharray="3 3"/>
+             <XAxis dataKey="name"/>
+             <YAxis/>
+             <Tooltip/>
+             <Legend />
+             <Bar dataKey="man" stackId="a" fill="#8884d8" />
+             <Bar dataKey="woman" stackId="a" fill="#82ca9d" />
+            </BarChart>
           </ResponsiveContainer>
         </Col>
         <Col xs="6" style={{ padding: '10px' }}>
@@ -83,18 +85,17 @@ const Report = ({ match }) => (
         </Col>
       </Row>
       <Row>
-        <Col xs="6">
-          <h3>NPS Answer Report</h3>
+        <Col xs="12">
+          <h3>NPS分數</h3>
           <ResponsiveContainer width="100%" height={400}>
-            <BarChart data={data2}
-                  margin={{top: 20, right: 30, left: 20, bottom: 5}}>
-             <CartesianGrid strokeDasharray="3 3"/>
-             <XAxis dataKey="name"/>
-             <YAxis/>
-             <Tooltip/>
-             <Legend />
-             <Bar dataKey="ans" stackId="a" fill="#8884d8" />
-            </BarChart>
+            <LineChart data={data}>
+              <CartesianGrid strokeDasharray="3 3"/>
+              <XAxis dataKey="name" padding={{left: 30, right: 30}}/>
+              <YAxis/>
+              <Tooltip/>
+              <Legend />
+              <Line type="monotone" dataKey="nps" stroke="#8884d8" activeDot={{r: 8}}/>
+            </LineChart>
           </ResponsiveContainer>
         </Col>
         <Col>
