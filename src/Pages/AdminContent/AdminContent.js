@@ -4,6 +4,7 @@ import Report from '../Report/Report';
 import { FormControl, Checkbox, FormGroup, ControlLabel, HelpBlock, Button, Modal, Radio } from 'react-bootstrap';
 import './AdminContent.css';
 import { Link } from "react-router-dom";
+import fileSaver from 'file-saver';
 import SurveyNPS from '../SurveyNPS/SurveyNPS';
 import SurveyMultiple from '../SurveyMultiple/SurveyMultiple';
 import AdminHome from '../Admin/AdminHome';
@@ -96,6 +97,15 @@ class AdminContent extends Component {
     this.setState({
       QPositive: event.target.value,
     });
+  };
+
+  download = (event) => {
+    if (event) {
+      event.preventDefault();
+    }
+
+    const file = new File(["Hello, world!"], `${this.state.surveyName}.csv`, {type: "text/plain;charset=utf-8"});
+    fileSaver.saveAs(file);
   };
 
   onStartDateChange = date => this.setState({ startDate: date });
@@ -418,6 +428,7 @@ class AdminContent extends Component {
               endDate={this.state.endDate}
               handleChangeStart={this.onStartDateChange}
               handleChangeEnd={this.onEndDateChange}
+              downloadHandler={this.download}
             />
           </div>
         );
