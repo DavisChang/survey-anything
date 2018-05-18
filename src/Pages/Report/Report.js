@@ -120,7 +120,16 @@ const Report = ({ match, demoData, startDate, endDate, handleChangeStart, handle
         </div>
       </Row>
       <Row style={{ marginBottom: '50px' }}>
-        <Col xs={3}>
+        <Col xs={4}>
+          <div style={{ color: '#000000', fontSize: '64px', textAlign: 'center' }}>
+            54
+          </div>
+          <div style={{ color: '#000000', fontSize: '20px', textAlign: 'center' }}>
+            Net Promoter Score
+          </div>
+        </Col>
+        <Col xs={2}>
+          <div>&emsp;</div>
           <div style={{ color: '#000000', fontSize: '28px', textAlign: 'center' }}>
             Responses
           </div>
@@ -128,7 +137,8 @@ const Report = ({ match, demoData, startDate, endDate, handleChangeStart, handle
             178
           </div>
         </Col>
-        <Col xs={3}>
+        <Col xs={2}>
+          <div>&emsp;</div>
           <div style={{ color: '#47ad0c', fontSize: '28px', textAlign: 'center' }}>
             Promoters
           </div>
@@ -139,7 +149,8 @@ const Report = ({ match, demoData, startDate, endDate, handleChangeStart, handle
             68% of total
           </div>
         </Col>
-        <Col xs={3}>
+        <Col xs={2}>
+          <div>&emsp;</div>
           <div style={{ color: '#0b4fad', fontSize: '28px', textAlign: 'center' }}>
             Passives
           </div>
@@ -150,7 +161,8 @@ const Report = ({ match, demoData, startDate, endDate, handleChangeStart, handle
             18% of total
           </div>
         </Col>
-        <Col xs={3}>
+        <Col xs={2}>
+          <div>&emsp;</div>
           <div style={{ color: '#ad0b0b', fontSize: '28px', textAlign: 'center' }}>
             Detractors
           </div>
