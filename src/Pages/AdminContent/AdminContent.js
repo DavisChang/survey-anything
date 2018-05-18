@@ -182,6 +182,7 @@ class AdminContent extends Component {
                     <FormGroup controlId="formControlsSelect">
                       <ControlLabel>國家</ControlLabel>
                       <FormControl componentClass="select" placeholder="select">
+                        <option value="TW">所有國家</option>
                         <option value="TW">Taiwan</option>
                         <option value="US">United States</option>
                         <option value="CN">China</option>
