@@ -94,7 +94,6 @@ body {
 
 .survey-table tbody td {
   width: 100%;
-  color: inherit;
   overflow: hidden;
   padding: 10px 8px 10px 24px;
   text-overflow: ellipsis;
@@ -117,6 +116,10 @@ body {
 
 .survey-table .close::after {
   transform: rotate(90deg);
+}
+
+.ing {
+  color: #ff5a5a;
 }
 
 

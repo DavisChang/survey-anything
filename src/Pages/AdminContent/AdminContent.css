@@ -18,7 +18,7 @@
   color: #000;
   text-decoration: none;
 }
-.target-survey-title .btn-primary a {
+.target-survey-title .btn-primary a, .target-survey-title .btn-success a{
   color: #FFF;
 } 
 
@@ -109,6 +109,10 @@ div.checkbox:first-of-type {
 
 .confirm-block {
   margin-bottom: 25px;
+}
+
+.confirm-block p {
+  font-weight: 700;
 }
 
 .confirm-detail {

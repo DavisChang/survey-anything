@@ -5,6 +5,7 @@ import './AdminContent.css';
 import { Link } from "react-router-dom";
 import SurveyNPS from '../SurveyNPS/SurveyNPS';
 import SurveyMultiple from '../SurveyMultiple/SurveyMultiple';
+import AdminHome from '../Admin/AdminHome';
 
 const FieldGroup = ({ id, label, help, ...props }) => {
   return (
@@ -21,9 +22,9 @@ class AdminContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      step: '123',
       surveyName: 'VIVEPORT Subscription NPS',
       urlPath: '/subscription/.*',
+      demoUrl: 'http://localhost:3000/subscriptions/SB-444b63a6-125d-4c80-8260-0c44de486029',
       show: false,
       surveyType: 'nps', // nps, multiple
       QName: '推薦 VIVEPORT 訂閱',
@@ -376,11 +377,19 @@ class AdminContent extends Component {
               正在發佈中 ... 請稍候 ...
             </h1>
             <div className="target-survey-title">
-              <Button>
-                <Link to="/admin">返回問卷清單</Link>
-              </Button>
               <Button bsStyle="primary">
                 <Link to="/admin/report">看報表</Link>
+              </Button>
+              <Button bsStyle="success">
+                <a
+                  target="_blank"
+                  href={this.state.demoUrl}
+                >
+                  發布效果 (Only Web)
+                </a>
+              </Button>
+              <Button>
+                <Link to="/admin/all">返回問卷清單</Link>
               </Button>
             </div>
           </div>
@@ -392,6 +401,8 @@ class AdminContent extends Component {
             <Report />
           </div>
         );
+      case 'all':
+        return (<AdminHome data={{surveyName: this.state.surveyName}}/>);
       default:
         return (
           <div className="AdminContent">
