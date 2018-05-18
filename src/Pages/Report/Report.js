@@ -17,7 +17,7 @@ const data = [
 ];
 
 const Report = ({ match }) => (
-  <div>
+  <div style={{ borderTop: '1px solid #ddd' }}>
     <Row>
       <Col xs="6" style={{ padding: '10px' }}>
         <h3>NPS Report</h3>
