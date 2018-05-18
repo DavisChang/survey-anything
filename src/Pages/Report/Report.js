@@ -60,7 +60,7 @@ const Report = ({ match }) => (
                   margin={{top: 20, right: 30, left: 20, bottom: 5}}>
              <CartesianGrid strokeDasharray="3 3"/>
              <XAxis dataKey="name"/>
-             <YAxis/>
+             <YAxis label={{ value: '人', position: 'insideBottom' }}/>
              <Tooltip/>
              <Legend />
              <Bar dataKey="man" stackId="a" fill="#8884d8" />
@@ -75,7 +75,7 @@ const Report = ({ match }) => (
               margin={{top: 10, right: 30, left: 0, bottom: 0}}>
               <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="name"/>
-              <YAxis/>
+              <YAxis label={{ value: '人', position: 'insideBottom' }}/>
               <Tooltip/>
               <Legend />
                 <Area type='monotone' dataKey='ans' stackId="1" stroke='#8884d8' fill='#8884d8' />
