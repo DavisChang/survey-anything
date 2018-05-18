@@ -121,7 +121,7 @@ class AdminContent extends Component {
         <div>
           <div className="target-survey-title">
             <p>問卷主題:</p>
-            <FormControl type="text" placeholder="請輸入問題文字" onChange={this.onChangeQName} value="請輸入問題文字" />
+            <FormControl type="text" placeholder="請輸入問卷文字" onChange={this.onChangeQName} value="請輸入問卷文字" />
           </div>
           <div className="target-survey-title">
             <p>問卷描述:</p>
@@ -153,6 +153,22 @@ class AdminContent extends Component {
     console.log('AdminContent state:', this.state);
 
     switch(this.props.match.params.id) {
+      case 'start':
+        return (
+          <div className="AdminContent start">
+            <h1 className="title">
+              正在發佈中 ... 請稍候 ...
+            </h1>
+            <div className="target-survey-title">
+              <Button>
+                <Link to="/admin">返回問卷清</Link>
+              </Button>
+              <Button bsStyle="primary">
+                <Link to="/admin/report">看報表</Link>
+              </Button>
+            </div>
+          </div>
+        );
       case 'target':
         return (
           <div className="AdminContent">
@@ -189,6 +205,7 @@ class AdminContent extends Component {
                     <FormGroup controlId="formControlsSelect">
                       <ControlLabel>性別</ControlLabel>
                       <FormControl componentClass="select" placeholder="select">
+                        <option value="all">全部</option>
                         <option value="m">男性</option>
                         <option value="w">女性</option>
                       </FormControl>
@@ -199,7 +216,7 @@ class AdminContent extends Component {
                   <p>其他設定：</p>
                   <div>
                     <FormGroup controlId="formControlsSelect">
-                      <ControlLabel>URL Path</ControlLabel>
+                      <ControlLabel>URL Path (Regular Expression)</ControlLabel>
                       <FormControl type="text" placeholder="/subscriptions/:SubID" onChange={this.onChangeUrlPath} value={this.state.urlPath} />
                     </FormGroup>
                     <FieldGroup
@@ -223,7 +240,7 @@ class AdminContent extends Component {
       case 'questions':
         return (
           <div className="AdminContent">
-            <h1 className="title">您的問題</h1>
+            <h1 className="title">您的問卷</h1>
             <div className="target-survey-control">
               <div className="target-survey-control-block questions">
                 <div style={{ position: 'relative' }}>
@@ -244,7 +261,7 @@ class AdminContent extends Component {
                     >
                       <Modal.Header closeButton>
                         <Modal.Title id="contained-modal-title">
-                          選擇問題樣式
+                          選擇問卷樣式
                         </Modal.Title>
                       </Modal.Header>
                       <Modal.Body>
@@ -298,6 +315,73 @@ class AdminContent extends Component {
         return (
           <div className="AdminContent">
             <h1 className="title">確認並啟用調查</h1>
+            <div className="target-survey-control confirm">
+              <div className="target-survey-control-block confirm">
+                <div className="confirm-block">
+                  <p>詳細資料</p>
+                  <p className="confirm-detail">
+                    <b>名稱:</b> <span>{this.state.QName}</span>
+                  </p>
+                </div>
+                <div className="confirm-block">
+                  <p>設定資料人員, 時間</p>
+                  <p className="confirm-detail">
+                    <b>人員:</b> <span>Davis Chang, {Date()}</span>
+                  </p>
+                </div>
+                <div className="confirm-block">
+                  <p>目標對象</p>
+                  <p className="confirm-detail">
+                    <b>群眾:</b> <span>Web, PC Client</span>
+                  </p>
+                </div>
+                <div className="confirm-block">
+                  <p>條件</p>
+                  <p className="confirm-detail">
+                    <b>國家:</b> <span>Taiwan</span>
+                  </p>
+                  <p className="confirm-detail">
+                    <b>性別:</b> <span>全部</span>
+                  </p>
+                </div>
+                <div className="confirm-block">
+                  <p>其他設定</p>
+                  <p className="confirm-detail">
+                    <b>URL Path:</b> <span>/subscription/.* (Regular Expression)</span>
+                  </p>
+                </div>
+                <div className="confirm-block">
+                  <p>問卷樣式</p>
+                  <p className="confirm-detail">
+                    <b>樣式:</b> <span>分級量表</span>
+                  </p>
+                </div>
+                <div className="confirm-block">
+                  <p>問卷</p>
+                  <p className="confirm-detail">
+                    <b>問卷主題:</b> <span>{this.state.QName}</span>
+                  </p>
+                  <p className="confirm-detail">
+                    <b>問卷描述:</b> <span>{this.state.QDesc}</span>
+                  </p>
+                  <p className="confirm-detail">
+                    <b>反向說明:</b> <span>{this.state.QNegative}</span>
+                  </p>
+                  <p className="confirm-detail">
+                    <b>反向說明:</b> <span>{this.state.QPositive}</span>
+                  </p>
+                </div>
+              </div>
+              <div className="target-survey-title">
+                <Button>
+                  <Link to="/admin/questions">返回</Link>
+                </Button>
+                <Button bsStyle="primary">
+                  <Link to="/admin/start">開始問卷</Link>
+                </Button>
+                <p className="help">如需協助或想瞭解進一步瞭解，請與我們小組聯絡。</p>
+              </div>
+            </div>
           </div>
         );
       case 'report':
