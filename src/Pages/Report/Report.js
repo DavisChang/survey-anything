@@ -91,7 +91,7 @@ const Report = ({ match }) => (
             <LineChart data={data}>
               <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="name" padding={{left: 30, right: 30}}/>
-              <YAxis/>
+              <YAxis unit="%"/>
               <Tooltip/>
               <Legend />
               <Line type="monotone" dataKey="nps" stroke="#8884d8" activeDot={{r: 8}}/>
