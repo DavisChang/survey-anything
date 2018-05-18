@@ -164,8 +164,9 @@ class AdminContent extends Component {
               </div>
               <div className="target-survey-control">
                 <div className="target-survey-control-block">
-                  <p>目標群眾</p>
+                  <p>目標群眾:</p>
                   <div>
+                    <ControlLabel>用戶端</ControlLabel>
                     <Checkbox>Web</Checkbox>
                     <Checkbox>AIO Device</Checkbox>
                     <Checkbox>VIVE Device</Checkbox>

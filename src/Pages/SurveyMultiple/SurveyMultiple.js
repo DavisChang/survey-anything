@@ -80,7 +80,7 @@ class SurveyMultiple extends Component {
     ];
     return(
       <div className="SurveyMultiple">
-        <h1 className="title">請輸入問題文字</h1>
+        <h1 className="title">請輸入問卷文字</h1>
         <p className="desc">請勾選所有合適的答案</p>
         <div className="options">
           <ol>

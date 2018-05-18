@@ -18,7 +18,7 @@ class SurveyNPS extends Component {
     desc: '您有多大可能會相您的朋友推薦 VIVEPORT 訂閱呢？',
     left: '不太滿意',
     right: '非常願意',
-    // title: '請輸入問題文字',
+    // title: '請輸入問卷文字',
     // desc: '您覺得',
     // left: '不太滿意',
     // right: '非常',

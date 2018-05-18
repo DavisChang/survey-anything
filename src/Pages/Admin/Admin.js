@@ -24,7 +24,7 @@ const Admin = ({ match, location }) => (
             to={`${match.url}/questions`}
             className={location.pathname === `${match.url}/questions` ? 'active' : 'link'}
           >
-            您的問題
+            您的問卷
           </Link>
         </li>
         <li>
