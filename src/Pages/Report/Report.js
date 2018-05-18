@@ -1,5 +1,6 @@
 import React from "react";
 import moment from 'moment';
+import DatePicker from 'react-datepicker';
 import { AreaChart, Area, BarChart, Bar, LineChart, Line, XAxis, YAxis,
   CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { Row, Col, Nav, NavItem, ButtonToolbar, ButtonGroup, Button, Glyphicon } from 'react-bootstrap';
@@ -8,6 +9,8 @@ import './Report.css';
 import download from './download.svg';
 import copy from './copy.svg';
 import home from './home.svg';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 const data = [
   {name: moment().format('MM/DD'), nps: 20, ans: 1000, total: 2400},
@@ -33,7 +36,7 @@ const data2 = [
   {name: '10星', man: 1400, woman: 700},
 ];
 
-const Report = ({ match, demoData, downloadHandler }) => (
+const Report = ({ match, demoData, startDate, endDate, handleChangeStart, handleChangeEnd, downloadHandler }) => (
   <Row>
     <Col xs={2}>
       <Nav bsStyle="pills" stacked activeKey={1}>
@@ -117,7 +120,26 @@ const Report = ({ match, demoData, downloadHandler }) => (
         </div>
       </Row>
       <Row>
-        <Col></Col>
+        <Col xsOffset={8} xs={1}>
+          Start:
+          <DatePicker
+            selected={startDate}
+            selectsStart
+            startDate={startDate}
+            endDate={endDate}
+            onChange={handleChangeStart}
+          />
+        </Col>
+        <Col xsOffset={1} xs={1}>
+          End:
+          <DatePicker
+            selected={endDate}
+            selectsEnd
+            startDate={startDate}
+            endDate={endDate}
+            onChange={handleChangeEnd}
+          />
+        </Col>
       </Row>
       <Row>
         <Col xs="6" style={{ padding: '10px' }}>
