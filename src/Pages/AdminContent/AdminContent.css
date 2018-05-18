@@ -3,3 +3,12 @@
   position: relative;
   margin: 30px 50px;
 }
+
+.target {
+
+}
+
+.target-survey-title input {
+width: 100%;
+max-width: 325px;
+}
