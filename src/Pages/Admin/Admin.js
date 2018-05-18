@@ -6,12 +6,6 @@ import AdminContent from '../AdminContent/AdminContent';
 
 const Admin = ({ match, location }) => (
   <div>
-    {
-      (() => {
-        console.log(match);
-        console.log(location);
-      })()
-    }
     <div className="header">
       <h2 className="logo">
         <Link className="adminLink" to={match.url}>Survey Anything</Link>
@@ -46,7 +40,7 @@ const Admin = ({ match, location }) => (
             to={`${match.url}/report`}
             className={location.pathname === `${match.url}/report` ? 'active' : 'link'}
           >
-            Report
+            報表
           </Link>
         </li>
       </ul>

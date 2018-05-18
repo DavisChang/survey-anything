@@ -22,8 +22,8 @@ class AdminContent extends Component {
     super(props);
     this.state = {
       step: '123',
-      surveyName: '',
-      urlPath: '',
+      surveyName: 'VIVEPORT Subscription NPS',
+      urlPath: '/subscription/.*',
       show: false,
       surveyType: 'nps', // nps, multiple
       QName: '推薦 VIVEPORT 訂閱',
@@ -153,22 +153,6 @@ class AdminContent extends Component {
     console.log('AdminContent state:', this.state);
 
     switch(this.props.match.params.id) {
-      case 'start':
-        return (
-          <div className="AdminContent start">
-            <h1 className="title">
-              正在發佈中 ... 請稍候 ...
-            </h1>
-            <div className="target-survey-title">
-              <Button>
-                <Link to="/admin">返回問卷清</Link>
-              </Button>
-              <Button bsStyle="primary">
-                <Link to="/admin/report">看報表</Link>
-              </Button>
-            </div>
-          </div>
-        );
       case 'target':
         return (
           <div className="AdminContent">
@@ -320,7 +304,7 @@ class AdminContent extends Component {
                 <div className="confirm-block">
                   <p>詳細資料</p>
                   <p className="confirm-detail">
-                    <b>名稱:</b> <span>{this.state.QName}</span>
+                    <b>問卷名稱:</b> <span>{this.state.surveyName}</span>
                   </p>
                 </div>
                 <div className="confirm-block">
@@ -347,7 +331,7 @@ class AdminContent extends Component {
                 <div className="confirm-block">
                   <p>其他設定</p>
                   <p className="confirm-detail">
-                    <b>URL Path:</b> <span>/subscription/.* (Regular Expression)</span>
+                    <b>URL Path:</b> <span>{this.state.urlPath} (Regular Expression)</span>
                   </p>
                 </div>
                 <div className="confirm-block">
@@ -384,10 +368,26 @@ class AdminContent extends Component {
             </div>
           </div>
         );
+      case 'start':
+        return (
+          <div className="AdminContent start">
+            <h1 className="title">
+              正在發佈中 ... 請稍候 ...
+            </h1>
+            <div className="target-survey-title">
+              <Button>
+                <Link to="/admin">返回問卷清單</Link>
+              </Button>
+              <Button bsStyle="primary">
+                <Link to="/admin/report">看報表</Link>
+              </Button>
+            </div>
+          </div>
+        );
       case 'report':
         return (
           <div className="AdminContent">
-            <h1 className="title">Report</h1>
+            <h1 className="title">報表</h1>
             <Report />
           </div>
         );
