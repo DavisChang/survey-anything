@@ -4,3 +4,22 @@
   color: rgba(0,0,0,0.9);
   cursor: pointer;
 }
+
+.between {
+  display: flex;
+  justify-content: start;
+}
+
+.between .confirm-block {
+  margin-right: 10%;
+}
+
+.target-survey-control-block .btn-toolbar {
+  position: absolute;
+  right: 0;
+}
+
+.download-icon {
+  width: 15px;
+  height: 15px;
+}

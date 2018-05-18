@@ -2,9 +2,12 @@ import React from "react";
 import moment from 'moment';
 import { AreaChart, Area, BarChart, Bar, LineChart, Line, XAxis, YAxis,
   CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { Row, Col, Nav, NavItem } from 'react-bootstrap';
+import { Row, Col, Nav, NavItem, ButtonToolbar, ButtonGroup, Button, Glyphicon } from 'react-bootstrap';
 import { Route, Link } from "react-router-dom";
 import './Report.css';
+import download from './download.svg';
+import copy from './copy.svg';
+import home from './home.svg';
 
 const data = [
   {name: moment().format('MM/DD'), nps: 20, ans: 1000, total: 2400},
@@ -30,7 +33,7 @@ const data2 = [
   {name: '10星', man: 1400, woman: 700},
 ];
 
-const Report = ({ match }) => (
+const Report = ({ match, demoData }) => (
   <Row>
     <Col xs={2}>
       <Nav bsStyle="pills" stacked activeKey={1}>
@@ -53,7 +56,65 @@ const Report = ({ match }) => (
     </Col>
     <Col xs={10}>
       <Row>
-        {/* For Davis */}
+        <div className="target-survey-control-block confirm">
+          <ButtonToolbar>
+            <ButtonGroup>
+              <Link to="/admin/all">
+                <Button>
+                  <img className="download-icon" src={home}/>
+                </Button>
+              </Link>
+              <Link to="/admin/questions">
+                <Button>
+                  <img className="download-icon" src={copy}/>
+                </Button>
+              </Link>
+              <Link to="#">
+                <Button>
+                  <img className="download-icon" src={download}/>
+                </Button>
+              </Link>
+            </ButtonGroup>
+          </ButtonToolbar>
+          <div className="confirm-block">
+            <p>詳細資料</p>
+            <p className="confirm-detail">
+              <b>問卷名稱:</b> <span>{demoData.surveyName}</span>
+            </p>
+          </div>
+          <div className="confirm-block">
+            <p>問卷</p>
+            <p className="confirm-detail">
+              <b>問卷主題:</b> <span>{demoData.QName}</span>
+            </p>
+            <p className="confirm-detail">
+              <b>問卷描述:</b> <span>{demoData.QDesc}</span>
+            </p>
+            <p className="confirm-detail">
+              <b>反向說明:</b> <span>{demoData.QNegative}</span>
+            </p>
+            <p className="confirm-detail">
+              <b>反向說明:</b> <span>{demoData.QPositive}</span>
+            </p>
+          </div>
+          <div className="between">
+            <div className="confirm-block">
+              <p>條件</p>
+              <p className="confirm-detail">
+                <b>國家:</b> <span>Taiwan</span>
+              </p>
+              <p className="confirm-detail">
+                <b>性別:</b> <span>所有性別</span>
+              </p>
+            </div>
+            <div className="confirm-block">
+              <p>問卷樣式</p>
+              <p className="confirm-detail">
+                <b>樣式:</b> <span>分級量表</span>
+              </p>
+            </div>
+          </div>
+        </div>
       </Row>
       <Row>
         <Col></Col>
