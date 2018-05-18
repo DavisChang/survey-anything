@@ -16,6 +16,20 @@ const data = [
   {name: moment().add(6, 'd').format('MM/DD'), nps: 90, pv: 340, amt: 2100},
 ];
 
+const data2 = [
+  {name: '1星', ans: 400},
+  {name: '2星', ans: 221},
+  {name: '2星', ans: 221},
+  {name: '3星', ans: 229},
+  {name: '4星', ans: 200},
+  {name: '5星', ans: 281},
+  {name: '6星', ans: 500},
+  {name: '7星', ans: 100},
+  {name: '8星', ans: 181},
+  {name: '9星', ans: 2500},
+  {name: '10星', ans: 2100},
+];
+
 const Report = ({ match }) => (
   <Row>
     <Col xs={2}>
@@ -69,17 +83,16 @@ const Report = ({ match }) => (
       </Row>
       <Row>
         <Col xs="6">
-          <h3>NPS Report</h3>
+          <h3>NPS Answer Report</h3>
           <ResponsiveContainer width="100%" height={400}>
-            <BarChart data={data}
+            <BarChart data={data2}
                   margin={{top: 20, right: 30, left: 20, bottom: 5}}>
              <CartesianGrid strokeDasharray="3 3"/>
              <XAxis dataKey="name"/>
              <YAxis/>
              <Tooltip/>
              <Legend />
-             <Bar dataKey="amt" stackId="a" fill="#8884d8" />
-             <Bar dataKey="pv" stackId="a" fill="#82ca9d" />
+             <Bar dataKey="ans" stackId="a" fill="#8884d8" />
             </BarChart>
           </ResponsiveContainer>
         </Col>
