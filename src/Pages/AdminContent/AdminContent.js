@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { FormControl, Checkbox, FormGroup, ControlLabel, HelpBlock, Button, Modal, Radio } from 'react-bootstrap';
+import Report from '../Report/Report';
+import { FormControl, Checkbox, FormGroup, ControlLabel, HelpBlock, Button } from 'react-bootstrap';
 import './AdminContent.css';
 import { Link } from "react-router-dom";
 import SurveyNPS from '../SurveyNPS/SurveyNPS';
@@ -303,6 +304,7 @@ class AdminContent extends Component {
         return (
           <div className="AdminContent">
             <h1 className="title">Report</h1>
+            <Report />
           </div>
         );
       default:

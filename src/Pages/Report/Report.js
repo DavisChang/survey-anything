@@ -1,36 +1,72 @@
 import React from "react";
+import moment from 'moment';
+import { AreaChart, Area, BarChart, Bar, LineChart, Line, XAxis, YAxis,
+  CartesianGrid, Tooltip, Legend } from "recharts";
+import { Row, Col } from 'react-bootstrap';
 import { Route, Link } from "react-router-dom";
 import './Report.css';
 
+const data = [
+  {name: moment().format('MM/DD'), nps: 4000, pv: 2400, amt: 2400},
+  {name: moment().add(1, 'd').format('MM/DD'), nps: 3000, pv: 1398, amt: 2210},
+  {name: moment().add(2, 'd').format('MM/DD'), nps: 2000, pv: 9800, amt: 2290},
+  {name: moment().add(3, 'd').format('MM/DD'), nps: 2780, pv: 3908, amt: 2000},
+  {name: moment().add(4, 'd').format('MM/DD'), nps: 1890, pv: 4800, amt: 2181},
+  {name: moment().add(5, 'd').format('MM/DD'), nps: 2390, pv: 3800, amt: 2500},
+  {name: moment().add(6, 'd').format('MM/DD'), nps: 3490, pv: 4300, amt: 2100},
+];
+
 const Report = ({ match }) => (
   <div>
-    <h2>
-      <Link className="adminLink" to={match.url}>Report</Link>
-    </h2>
-    <ul>
-      <li>
-        <Link to={`${match.url}/target`}>Target</Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/questions`}>Questions</Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/confirm`}>Confirm</Link>
-      </li>
-    </ul>
-
-    <Route path={`${match.url}/:id`} component={AdminContent} />
-    <Route
-      exact
-      path={match.url}
-      render={() => <h3>Welcome To Our Service, You Can Survey Anything, And What you Want.</h3>}
-    />
+    <Row>
+      <Col xs="6">
+        <h3>NPS Report</h3>
+        <LineChart width={600} height={400} data={data}>
+          <CartesianGrid strokeDasharray="3 3"/>
+          <XAxis dataKey="name" padding={{left: 30, right: 30}}/>
+          <YAxis/>
+          <Tooltip/>
+          <Legend />
+          <Line type="monotone" dataKey="nps" stroke="#8884d8" activeDot={{r: 8}}/>
+          <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
+        </LineChart>
+      </Col>
+      <Col xs="6">
+        <h3>NPS Report</h3>
+        <AreaChart width={620} height={400} data={data}
+          margin={{top: 10, right: 30, left: 0, bottom: 0}}>
+          <CartesianGrid strokeDasharray="3 3"/>
+          <XAxis dataKey="name"/>
+          <YAxis/>
+          <Tooltip/>
+          <Area type='monotone' dataKey='nps' stackId="1" stroke='#8884d8' fill='#8884d8' />
+          <Area type='monotone' dataKey='pv' stackId="1" stroke='#82ca9d' fill='#82ca9d' />
+          <Area type='monotone' dataKey='amt' stackId="1" stroke='#ffc658' fill='#ffc658' />
+        </AreaChart>
+      </Col>
+    </Row>
+    <Row>
+      <Col xs="6">
+        <h3>NPS Report</h3>
+        <BarChart width={600} height={400} data={data}
+              margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+         <CartesianGrid strokeDasharray="3 3"/>
+         <XAxis dataKey="name"/>
+         <YAxis/>
+         <Tooltip/>
+         <Legend />
+         <Bar dataKey="nps" stackId="a" fill="#8884d8" />
+         <Bar dataKey="pv" stackId="a" fill="#82ca9d" />
+        </BarChart>
+      </Col>
+      <Col>
+      </Col>
+    </Row>
   </div>
 );
 
 const AdminContent = ({ match }) => (
   <div>
-    <h3>{match.params.id}</h3>
   </div>
 );
 
