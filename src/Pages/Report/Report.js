@@ -19,9 +19,9 @@ const data = [
 const Report = ({ match }) => (
   <div>
     <Row>
-      <Col>
+      <Col xs="6">
         <h3>NPS Report</h3>
-        <LineChart width={600} height={300} data={data}>
+        <LineChart width={600} height={400} data={data}>
           <CartesianGrid strokeDasharray="3 3"/>
           <XAxis dataKey="name" padding={{left: 30, right: 30}}/>
           <YAxis/>
@@ -31,7 +31,7 @@ const Report = ({ match }) => (
           <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
         </LineChart>
       </Col>
-      <Col>
+      <Col xs="6">
         <h3>NPS Report</h3>
         <AreaChart width={620} height={400} data={data}
           margin={{top: 10, right: 30, left: 0, bottom: 0}}>
@@ -48,7 +48,7 @@ const Report = ({ match }) => (
     <Row>
       <Col xs="6">
         <h3>NPS Report</h3>
-        <BarChart width={600} height={300} data={data}
+        <BarChart width={600} height={400} data={data}
               margin={{top: 20, right: 30, left: 20, bottom: 5}}>
          <CartesianGrid strokeDasharray="3 3"/>
          <XAxis dataKey="name"/>
@@ -59,7 +59,8 @@ const Report = ({ match }) => (
          <Bar dataKey="pv" stackId="a" fill="#82ca9d" />
         </BarChart>
       </Col>
-      <Col>AAAAAA</Col>
+      <Col>
+      </Col>
     </Row>
   </div>
 );
