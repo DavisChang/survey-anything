@@ -7,13 +7,13 @@ import { Route, Link } from "react-router-dom";
 import './Report.css';
 
 const data = [
-  {name: moment().format('MM/DD'), nps: 20, pv: 1000, amt: 2400},
-  {name: moment().add(1, 'd').format('MM/DD'), nps: 80, pv: 800, amt: 2210},
-  {name: moment().add(2, 'd').format('MM/DD'), nps: 65, pv: 600, amt: 2290},
-  {name: moment().add(3, 'd').format('MM/DD'), nps: -10, pv: 400, amt: 2000},
-  {name: moment().add(4, 'd').format('MM/DD'), nps: -80, pv: 380, amt: 2181},
-  {name: moment().add(5, 'd').format('MM/DD'), nps: 30, pv: 360, amt: 2500},
-  {name: moment().add(6, 'd').format('MM/DD'), nps: 90, pv: 340, amt: 2100},
+  {name: moment().format('MM/DD'), nps: 20, ans: 1000, total: 2400},
+  {name: moment().add(1, 'd').format('MM/DD'), nps: 80, ans: 800, total: 2210},
+  {name: moment().add(2, 'd').format('MM/DD'), nps: 65, ans: 600, total: 2290},
+  {name: moment().add(3, 'd').format('MM/DD'), nps: -10, ans: 400, total: 2000},
+  {name: moment().add(4, 'd').format('MM/DD'), nps: -80, ans: 380, total: 2181},
+  {name: moment().add(5, 'd').format('MM/DD'), nps: 30, ans: 360, total: 2500},
+  {name: moment().add(6, 'd').format('MM/DD'), nps: 90, ans: 340, total: 2100},
 ];
 
 const data2 = [
@@ -76,7 +76,8 @@ const Report = ({ match }) => (
               <YAxis/>
               <Tooltip/>
               <Legend />
-              <Area type='monotone' dataKey='pv' stackId="1" stroke='#82ca9d' fill='#82ca9d' />
+                <Area type='monotone' dataKey='ans' stackId="1" stroke='#8884d8' fill='#8884d8' />
+                <Area type='monotone' dataKey='total' stackId="1" stroke='#ffc658' fill='#ffc658' />
             </AreaChart>
           </ResponsiveContainer>
         </Col>
