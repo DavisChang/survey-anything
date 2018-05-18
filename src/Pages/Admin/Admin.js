@@ -22,7 +22,7 @@ const Admin = ({ match, location }) => (
             to={`${match.url}/target`}
             className={location.pathname === `${match.url}/target` ? 'active' : 'link'}
           >
-            Target
+            目標對象
           </Link>
         </li>
         <li>
@@ -30,7 +30,7 @@ const Admin = ({ match, location }) => (
             to={`${match.url}/questions`}
             className={location.pathname === `${match.url}/questions` ? 'active' : 'link'}
           >
-            Questions
+            您的問題
           </Link>
         </li>
         <li>
@@ -38,7 +38,7 @@ const Admin = ({ match, location }) => (
             to={`${match.url}/confirm`}
             className={location.pathname === `${match.url}/confirm` ? 'active' : 'link'}
           >
-            Confirm
+            確認並啟用調查
           </Link>
         </li>
         <li>
