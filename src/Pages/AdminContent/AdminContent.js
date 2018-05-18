@@ -182,6 +182,7 @@ class AdminContent extends Component {
                     <FormGroup controlId="formControlsSelect">
                       <ControlLabel>國家</ControlLabel>
                       <FormControl componentClass="select" placeholder="select">
+                        <option value="TW">所有國家</option>
                         <option value="TW">Taiwan</option>
                         <option value="US">United States</option>
                         <option value="CN">China</option>
@@ -191,7 +192,7 @@ class AdminContent extends Component {
                     <FormGroup controlId="formControlsSelect">
                       <ControlLabel>性別</ControlLabel>
                       <FormControl componentClass="select" placeholder="select">
-                        <option value="all">全部</option>
+                        <option value="all">所有性別</option>
                         <option value="m">男性</option>
                         <option value="w">女性</option>
                       </FormControl>
@@ -327,7 +328,7 @@ class AdminContent extends Component {
                     <b>國家:</b> <span>Taiwan</span>
                   </p>
                   <p className="confirm-detail">
-                    <b>性別:</b> <span>全部</span>
+                    <b>性別:</b> <span>所有性別</span>
                   </p>
                 </div>
                 <div className="confirm-block">
