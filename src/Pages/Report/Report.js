@@ -1,10 +1,13 @@
 import React from "react";
 import moment from 'moment';
+import DatePicker from 'react-datepicker';
 import { AreaChart, Area, BarChart, Bar, LineChart, Line, XAxis, YAxis,
   CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { Row, Col, Nav, NavItem } from 'react-bootstrap';
 import { Route, Link } from "react-router-dom";
 import './Report.css';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 const data = [
   {name: moment().format('MM/DD'), nps: 20, ans: 1000, total: 2400},
@@ -30,7 +33,7 @@ const data2 = [
   {name: '10星', man: 1400, woman: 700},
 ];
 
-const Report = ({ match }) => (
+const Report = ({ match, startDate, endDate, handleChangeStart, handleChangeEnd }) => (
   <Row>
     <Col xs={2}>
       <Nav bsStyle="pills" stacked activeKey={1}>
@@ -56,7 +59,26 @@ const Report = ({ match }) => (
         {/* For Davis */}
       </Row>
       <Row>
-        <Col></Col>
+        <Col xsOffset={8} xs={1}>
+          Start:
+          <DatePicker
+            selected={startDate}
+            selectsStart
+            startDate={startDate}
+            endDate={endDate}
+            onChange={handleChangeStart}
+          />
+        </Col>
+        <Col xsOffset={1} xs={1}>
+          End:
+          <DatePicker
+            selected={endDate}
+            selectsEnd
+            startDate={startDate}
+            endDate={endDate}
+            onChange={handleChangeEnd}
+          />
+        </Col>
       </Row>
       <Row>
         <Col xs="6" style={{ padding: '10px' }}>

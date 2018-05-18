@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import Report from '../Report/Report';
 import { FormControl, Checkbox, FormGroup, ControlLabel, HelpBlock, Button, Modal, Radio } from 'react-bootstrap';
 import './AdminContent.css';
@@ -31,6 +32,8 @@ class AdminContent extends Component {
       QDesc: '您有多大可能會相您的朋友推薦 VIVEPORT 訂閱呢？',
       QNegative: '不太滿意',
       QPositive: '非常願意',
+      startDate: moment(),
+      endDate: moment(),
     };
   }
 
@@ -94,6 +97,10 @@ class AdminContent extends Component {
       QPositive: event.target.value,
     });
   };
+
+  onStartDateChange = date => this.setState({ startDate: date });
+
+  onEndDateChange = date => this.setState({ endDate: date });
 
   renderLeft = () => {
     if (this.state.surveyType === 'nps') {
@@ -399,7 +406,12 @@ class AdminContent extends Component {
         return (
           <div className="AdminContent">
             <h1 className="title">報表</h1>
-            <Report data={this.state} />
+            <Report
+              startDate={this.state.startDate}
+              endDate={this.state.endDate}
+              handleChangeStart={this.onStartDateChange}
+              handleChangeEnd={this.onEndDateChange}
+            />
           </div>
         );
       case 'all':
