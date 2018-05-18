@@ -2,7 +2,7 @@ import React from "react";
 import moment from 'moment';
 import { AreaChart, Area, BarChart, Bar, LineChart, Line, XAxis, YAxis,
   CartesianGrid, Tooltip, Legend } from "recharts";
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col } from 'react-bootstrap';
 import { Route, Link } from "react-router-dom";
 import './Report.css';
 
@@ -17,7 +17,7 @@ const data = [
 ];
 
 const Report = ({ match }) => (
-  <Container>
+  <div>
     <Row>
       <Col>
         <h3>NPS Report</h3>
@@ -61,7 +61,7 @@ const Report = ({ match }) => (
       </Col>
       <Col>AAAAAA</Col>
     </Row>
-  </Container>
+  </div>
 );
 
 const AdminContent = ({ match }) => (

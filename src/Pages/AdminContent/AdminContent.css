@@ -4,11 +4,42 @@
   margin: 30px 50px;
 }
 
-.target {
-
+.target-survey-title {
+  border: 1px solid #ddd;
+  padding-right: 30%;
+  padding: 20px;
 }
 
-.target-survey-title input {
-width: 100%;
-max-width: 325px;
+.target-survey-title button {
+  margin-right: 20px;
+  color: #000;
+}
+.target-survey-title button a {
+  color: #000;
+  text-decoration: none;
+}
+
+.target-survey-title p {
+  position: relative;
+  font-size: 13px;
+  font-weight: bold;
+}
+.target-survey-control {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+
+.target-survey-control-block {
+  border: 1px solid #ddd;
+  width: 33.33%;
+  height: 300px;
+  padding: 15px 10px;
+}
+
+.target-survey-control-block .checkbox {
+  padding: 10px 0 0;
+}
+.target-survey-control-block p {
+  margin-bottom: 20px;
 }
