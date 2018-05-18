@@ -21,9 +21,9 @@ class AdminContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      step: '123',
       surveyName: 'VIVEPORT Subscription NPS',
       urlPath: '/subscription/.*',
+      demoUrl: 'http://localhost:3000/subscriptions/SB-444b63a6-125d-4c80-8260-0c44de486029',
       show: false,
       surveyType: 'nps', // nps, multiple
       QName: '推薦 VIVEPORT 訂閱',
@@ -381,6 +381,14 @@ class AdminContent extends Component {
               </Button>
               <Button bsStyle="primary">
                 <Link to="/admin/report">看報表</Link>
+              </Button>
+              <Button bsStyle="success">
+                <a
+                  target="_blank"
+                  href={this.state.demoUrl}
+                >
+                  發布效果 (Only Web)
+                </a>
               </Button>
             </div>
           </div>
