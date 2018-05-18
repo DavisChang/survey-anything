@@ -13,6 +13,17 @@ class SurveyNPS extends Component {
     };
   }
 
+  static defaultProps = {
+    title: '推薦 VIVEPORT 訂閱',
+    desc: '您有多大可能會相您的朋友推薦 VIVEPORT 訂閱呢？',
+    left: '不太滿意',
+    right: '非常願意',
+    // title: '請輸入問題文字',
+    // desc: '您覺得',
+    // left: '不太滿意',
+    // right: '非常',
+  }
+
   onMouseEnterHandler = key => event => {
     const stars = ReactDOM.findDOMNode(this.rating).getElementsByClassName('star');
     Object.keys(stars).forEach((starKey, starsIndex) => {
@@ -61,8 +72,8 @@ class SurveyNPS extends Component {
     const stars = Array.apply(null, {length: STAR_AMOUNT}).map(Number.call, Number);
     return(
       <div className="SurveyNPS">
-        <h1 className="title">請輸入問題文字</h1>
-        <p className="desc">您覺得</p>
+        <h1 className="title">{this.props.title}</h1>
+        <p className="desc">{this.props.desc}</p>
         <div className="rating" ref={(rating) => this.rating = rating}>
           {stars.map(key => this.renderStar(key))}
         </div>
@@ -70,12 +81,13 @@ class SurveyNPS extends Component {
           <table cellPadding="0" cellSpacing="0" border="0" width="100%">
             <tbody>
               <tr>
-                <td>不太滿意</td>
-                <td>非常</td>
+                <td>{this.props.left}</td>
+                <td>{this.props.right}</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <span className="close rounded"/>
       </div>
     );
   }

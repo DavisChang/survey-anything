@@ -1,6 +1,124 @@
-.adminLink {
-  text-decoration: none;
-  font: 500 30px/1.2 Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
-  color: rgba(0,0,0,0.9);
-  cursor: pointer;
+body {
+  background-color: #f4f6f8;
 }
+
+.header {
+  height: 56px;
+  background: #333;
+  background: rgba(47,47,47,0.98);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.logo {
+  margin: 0;
+}
+
+.logo .adminLink {
+  text-decoration: none;
+  font: 700 24px/1.5 Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  cursor: pointer;
+  color: #FFF;
+}
+
+.header-tab {
+  list-style-type:  none;
+  display: flex;
+  flex-direction: row;
+}
+
+.header-tab li {
+  display: block;
+  font: 500 16px/1.2 Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+
+.header-tab li a {
+  padding: 17px 0;
+  text-decoration: none;
+  color: #999;
+}
+
+.header-tab li a.active {
+  color: #FFF;
+  border-bottom: 2px solid #FFF;
+}
+
+.AdminHome {
+  display: block;
+  position: relative;
+  margin: 30px 50px;
+  background-color: #f5f5f5;
+}
+
+.AdminHome .survey-table {
+  background-color: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+  color: rgba(0,0,0,0.54);
+  display: inline-block;
+  font-size: 13px;
+  width: 100%;
+}
+
+.survey-table table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.survey-table thead {
+  color: #616161;
+}
+
+.survey-table tr {
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+.survey-table thead th {
+  width: 100%;
+  color: rgba(0,0,0,0.87);
+  padding: 16px 8px;
+  padding-left: 24px;
+  font-family: inherit;
+}
+
+.survey-table tbody td {
+  width: 100%;
+  color: inherit;
+  overflow: hidden;
+  padding: 10px 8px 10px 24px;
+  text-overflow: ellipsis;
+  font-family: inherit;
+}
+
+.survey-table .close {
+  position: relative;
+  top: initial;
+  right: initial;
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin-right: 20px;
+}
+
+.survey-table .close::before {
+  transform: rotate(0);
+}
+
+.survey-table .close::after {
+  transform: rotate(90deg);
+}
+
+
+
+
+
+
+
+
+

@@ -56,3 +56,39 @@ td {
   font: 500 14px/1 Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
   color: rgba(0,0,0,0.54);
 }
+
+.close {
+  cursor: pointer;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  overflow: hidden;
+  position: absolute;
+  top: 26px;
+  right: 20px;
+}
+
+.close::before {
+  transform: rotate(45deg);
+}
+.close::after {
+  transform: rotate(-45deg);
+}
+
+.close::before, .close::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+  background: #000;
+}
+.close:hover::before,  .close:hover::after{
+  background: #1ebcc5;
+}
+
+.close.rounded::before, .close.rounded::after {
+  border-radius: 5px;
+}
