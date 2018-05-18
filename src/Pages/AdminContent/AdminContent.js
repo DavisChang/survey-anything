@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Report from '../Report/Report';
 import './AdminContent.css';
 
 class AdminContent extends Component {
@@ -50,6 +51,7 @@ class AdminContent extends Component {
         return (
           <div className="AdminContent">
             <h1 className="title">Report</h1>
+            <Report />
           </div>
         );
       default:
