@@ -119,6 +119,49 @@ const Report = ({ match, demoData, startDate, endDate, handleChangeStart, handle
           </div>
         </div>
       </Row>
+      <Row style={{ marginBottom: '50px' }}>
+        <Col xs={3}>
+          <div style={{ color: '#000000', fontSize: '28px', textAlign: 'center' }}>
+            Responses
+          </div>
+          <div style={{ color: '#000000', fontSize: '28px', textAlign: 'center' }}>
+            178
+          </div>
+        </Col>
+        <Col xs={3}>
+          <div style={{ color: '#47ad0c', fontSize: '28px', textAlign: 'center' }}>
+            Promoters
+          </div>
+          <div style={{ color: '#47ad0c', fontSize: '28px', textAlign: 'center' }}>
+            131
+          </div>
+          <div style={{ fontSize: '14px', textAlign: 'center' }}>
+            68% of total
+          </div>
+        </Col>
+        <Col xs={3}>
+          <div style={{ color: '#0b4fad', fontSize: '28px', textAlign: 'center' }}>
+            Passives
+          </div>
+          <div style={{ color: '#0b4fad', fontSize: '28px', textAlign: 'center' }}>
+            31
+          </div>
+          <div style={{ fontSize: '14px', textAlign: 'center' }}>
+            18% of total
+          </div>
+        </Col>
+        <Col xs={3}>
+          <div style={{ color: '#ad0b0b', fontSize: '28px', textAlign: 'center' }}>
+            Detractors
+          </div>
+          <div style={{ color: '#ad0b0b', fontSize: '28px', textAlign: 'center' }}>
+            25
+          </div>
+          <div style={{ fontSize: '14px', textAlign: 'center' }}>
+            14% of total
+          </div>
+        </Col>
+      </Row>
       <Row>
         <Col xsOffset={8} xs={1}>
           Start:
@@ -139,6 +182,21 @@ const Report = ({ match, demoData, startDate, endDate, handleChangeStart, handle
             endDate={endDate}
             onChange={handleChangeEnd}
           />
+        </Col>
+      </Row>
+      <Row>
+        <Col xs="12">
+          <h3>NPS分數</h3>
+          <ResponsiveContainer width="100%" height={400}>
+            <LineChart data={data}>
+              <CartesianGrid strokeDasharray="3 3"/>
+              <XAxis dataKey="name" padding={{left: 30, right: 30}}/>
+              <YAxis unit="%"/>
+              <Tooltip/>
+              <Legend />
+              <Line type="monotone" dataKey="nps" stroke="#8884d8" activeDot={{r: 8}}/>
+            </LineChart>
+          </ResponsiveContainer>
         </Col>
       </Row>
       <Row>
@@ -171,23 +229,6 @@ const Report = ({ match, demoData, startDate, endDate, handleChangeStart, handle
                 <Area type='monotone' dataKey='total' stackId="1" stroke='#ffc658' fill='#ffc658' />
             </AreaChart>
           </ResponsiveContainer>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs="12">
-          <h3>NPS分數</h3>
-          <ResponsiveContainer width="100%" height={400}>
-            <LineChart data={data}>
-              <CartesianGrid strokeDasharray="3 3"/>
-              <XAxis dataKey="name" padding={{left: 30, right: 30}}/>
-              <YAxis unit="%"/>
-              <Tooltip/>
-              <Legend />
-              <Line type="monotone" dataKey="nps" stroke="#8884d8" activeDot={{r: 8}}/>
-            </LineChart>
-          </ResponsiveContainer>
-        </Col>
-        <Col>
         </Col>
       </Row>
     </Col>
