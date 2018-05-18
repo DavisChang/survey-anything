@@ -8,7 +8,9 @@ class AdminHome extends Component {
     if (data && data.surveyName) {
       return (
         <tr>
-          <td>{data.surveyName}</td>
+          <td className="title-link">
+            <Link to="/admin/questions">{data.surveyName}</Link>
+          </td>
           <td className="ing">正在收集回覆</td>
           <td>2018年5月18日</td>
           <td>2018年5月18日</td>

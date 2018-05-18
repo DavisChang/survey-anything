@@ -44,6 +44,10 @@ const Admin = ({ match, location }) => (
           </Link>
         </li>
       </ul>
+      <div className="user">
+        <img className="photo" src="https://cdn.dribbble.com/assets/avatar-default-aa2eab7684294781f93bc99ad394a0eb3249c5768c21390163c9f55ea8ef83a4.gif"/>
+        <span>Davis Chang</span>
+      </div>
     </div>
     <Route path={`${match.url}/:id`} component={AdminContent} />
     <Route

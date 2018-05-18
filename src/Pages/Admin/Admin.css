@@ -122,7 +122,30 @@ body {
   color: #ff5a5a;
 }
 
+.title-link a {
+  text-decoration: underline;
+  color: #00B5E2;
+}
 
+.title-link a:hover {
+  text-decoration: underline;
+  color: #0A8ECB;
+}
+
+.user {
+  position: absolute;
+  right: 50px;
+  font-size: 14px;
+  color: #999;
+}
+
+.user .photo {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto 0 auto;
+  border-radius: 50%;
+}
 
 
 
