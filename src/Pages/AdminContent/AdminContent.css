@@ -105,6 +105,7 @@ div.checkbox:first-of-type {
 }
 .confirm p span {
   border-bottom: 1px solid #ddd;
+  font-weight: 400;
 }
 
 .confirm-block {

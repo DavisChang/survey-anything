@@ -219,6 +219,12 @@ class AdminContent extends Component {
                       label="客製化"
                       help="Example block-level help text here."
                     />
+                    <FormGroup controlId="formControlsSelect">
+                      <ControlLabel>欄位</ControlLabel>
+                      <FormControl componentClass="select" placeholder="select">
+                        <option value="none">尚未上傳檔</option>
+                      </FormControl>
+                    </FormGroup>
                   </div>
                 </div>
               </div>
@@ -407,6 +413,7 @@ class AdminContent extends Component {
           <div className="AdminContent">
             <h1 className="title">報表</h1>
             <Report
+              demoData={this.state}
               startDate={this.state.startDate}
               endDate={this.state.endDate}
               handleChangeStart={this.onStartDateChange}
