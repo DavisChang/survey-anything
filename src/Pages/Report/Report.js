@@ -1,7 +1,7 @@
 import React from "react";
 import moment from 'moment';
 import { AreaChart, Area, BarChart, Bar, LineChart, Line, XAxis, YAxis,
-  CartesianGrid, Tooltip, Legend } from "recharts";
+  CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { Row, Col } from 'react-bootstrap';
 import { Route, Link } from "react-router-dom";
 import './Report.css';
@@ -19,45 +19,52 @@ const data = [
 const Report = ({ match }) => (
   <div>
     <Row>
-      <Col xs="6">
+      <Col xs="6" style={{ padding: '10px' }}>
         <h3>NPS Report</h3>
-        <LineChart width={600} height={400} data={data}>
-          <CartesianGrid strokeDasharray="3 3"/>
-          <XAxis dataKey="name" padding={{left: 30, right: 30}}/>
-          <YAxis/>
-          <Tooltip/>
-          <Legend />
-          <Line type="monotone" dataKey="nps" stroke="#8884d8" activeDot={{r: 8}}/>
-          <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
-        </LineChart>
+        <ResponsiveContainer width="100%" height={400}>
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray="3 3"/>
+            <XAxis dataKey="name" padding={{left: 30, right: 30}}/>
+            <YAxis/>
+            <Tooltip/>
+            <Legend />
+            <Line type="monotone" dataKey="nps" stroke="#8884d8" activeDot={{r: 8}}/>
+            <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
+          </LineChart>
+        </ResponsiveContainer>
       </Col>
-      <Col xs="6">
+      <Col xs="6" style={{ padding: '10px' }}>
         <h3>NPS Report</h3>
-        <AreaChart width={620} height={400} data={data}
-          margin={{top: 10, right: 30, left: 0, bottom: 0}}>
-          <CartesianGrid strokeDasharray="3 3"/>
-          <XAxis dataKey="name"/>
-          <YAxis/>
-          <Tooltip/>
-          <Area type='monotone' dataKey='nps' stackId="1" stroke='#8884d8' fill='#8884d8' />
-          <Area type='monotone' dataKey='pv' stackId="1" stroke='#82ca9d' fill='#82ca9d' />
-          <Area type='monotone' dataKey='amt' stackId="1" stroke='#ffc658' fill='#ffc658' />
-        </AreaChart>
+        <ResponsiveContainer width="100%" height={400}>
+          <AreaChart data={data}
+            margin={{top: 10, right: 30, left: 0, bottom: 0}}>
+            <CartesianGrid strokeDasharray="3 3"/>
+            <XAxis dataKey="name"/>
+            <YAxis/>
+            <Tooltip/>
+            <Legend />
+            <Area type='monotone' dataKey='nps' stackId="1" stroke='#8884d8' fill='#8884d8' />
+            <Area type='monotone' dataKey='pv' stackId="1" stroke='#82ca9d' fill='#82ca9d' />
+            <Area type='monotone' dataKey='amt' stackId="1" stroke='#ffc658' fill='#ffc658' />
+          </AreaChart>
+        </ResponsiveContainer>
       </Col>
     </Row>
     <Row>
       <Col xs="6">
         <h3>NPS Report</h3>
-        <BarChart width={600} height={400} data={data}
-              margin={{top: 20, right: 30, left: 20, bottom: 5}}>
-         <CartesianGrid strokeDasharray="3 3"/>
-         <XAxis dataKey="name"/>
-         <YAxis/>
-         <Tooltip/>
-         <Legend />
-         <Bar dataKey="nps" stackId="a" fill="#8884d8" />
-         <Bar dataKey="pv" stackId="a" fill="#82ca9d" />
-        </BarChart>
+        <ResponsiveContainer width="100%" height={400}>
+          <BarChart data={data}
+                margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+           <CartesianGrid strokeDasharray="3 3"/>
+           <XAxis dataKey="name"/>
+           <YAxis/>
+           <Tooltip/>
+           <Legend />
+           <Bar dataKey="nps" stackId="a" fill="#8884d8" />
+           <Bar dataKey="pv" stackId="a" fill="#82ca9d" />
+          </BarChart>
+        </ResponsiveContainer>
       </Col>
       <Col>
       </Col>
