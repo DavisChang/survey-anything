@@ -3,6 +3,7 @@ import Report from '../Report/Report';
 import { FormControl, Checkbox, FormGroup, ControlLabel, HelpBlock, Button, Modal, Radio } from 'react-bootstrap';
 import './AdminContent.css';
 import { Link } from "react-router-dom";
+import fileSaver from 'file-saver';
 import SurveyNPS from '../SurveyNPS/SurveyNPS';
 import SurveyMultiple from '../SurveyMultiple/SurveyMultiple';
 import AdminHome from '../Admin/AdminHome';
@@ -93,6 +94,15 @@ class AdminContent extends Component {
     this.setState({
       QPositive: event.target.value,
     });
+  };
+
+  download = (event) => {
+    if (event) {
+      event.preventDefault();
+    }
+
+    const file = new File(["Hello, world!"], `${this.state.surveyName}.csv`, {type: "text/plain;charset=utf-8"});
+    fileSaver.saveAs(file);
   };
 
   renderLeft = () => {
@@ -405,7 +415,7 @@ class AdminContent extends Component {
         return (
           <div className="AdminContent">
             <h1 className="title">報表</h1>
-            <Report demoData={this.state} />
+            <Report demoData={this.state} downloadHandler={this.download}/>
           </div>
         );
       case 'all':

@@ -33,7 +33,7 @@ const data2 = [
   {name: '10星', man: 1400, woman: 700},
 ];
 
-const Report = ({ match, demoData }) => (
+const Report = ({ match, demoData, downloadHandler }) => (
   <Row>
     <Col xs={2}>
       <Nav bsStyle="pills" stacked activeKey={1}>
@@ -71,7 +71,7 @@ const Report = ({ match, demoData }) => (
               </Link>
               <Link to="#">
                 <Button>
-                  <img className="download-icon" src={download}/>
+                  <img className="download-icon" src={download} onClick={downloadHandler}/>
                 </Button>
               </Link>
             </ButtonGroup>
