@@ -5,6 +5,7 @@ import './AdminContent.css';
 import { Link } from "react-router-dom";
 import SurveyNPS from '../SurveyNPS/SurveyNPS';
 import SurveyMultiple from '../SurveyMultiple/SurveyMultiple';
+import AdminHome from '../Admin/AdminHome';
 
 const FieldGroup = ({ id, label, help, ...props }) => {
   return (
@@ -376,9 +377,6 @@ class AdminContent extends Component {
               正在發佈中 ... 請稍候 ...
             </h1>
             <div className="target-survey-title">
-              <Button>
-                <Link to="/admin">返回問卷清單</Link>
-              </Button>
               <Button bsStyle="primary">
                 <Link to="/admin/report">看報表</Link>
               </Button>
@@ -390,6 +388,9 @@ class AdminContent extends Component {
                   發布效果 (Only Web)
                 </a>
               </Button>
+              <Button>
+                <Link to="/admin/all">返回問卷清單</Link>
+              </Button>
             </div>
           </div>
         );
@@ -400,6 +401,8 @@ class AdminContent extends Component {
             <Report />
           </div>
         );
+      case 'all':
+        return (<AdminHome data={{surveyName: this.state.surveyName}}/>);
       default:
         return (
           <div className="AdminContent">

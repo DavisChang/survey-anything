@@ -3,6 +3,22 @@ import { Link } from "react-router-dom";
 
 class AdminHome extends Component {
 
+  renderData = () => {
+    const { data } = this.props;
+    if (data && data.surveyName) {
+      return (
+        <tr>
+          <td>{data.surveyName}</td>
+          <td className="ing">正在收集回覆</td>
+          <td>2018年5月18日</td>
+          <td>2018年5月18日</td>
+          <td>未排定時間</td>
+          <td></td>
+        </tr>
+      );
+    }
+  };
+
   render() {
     return(
       <div className="AdminHome">
@@ -22,6 +38,15 @@ class AdminHome extends Component {
               </tr>
             </thead>
             <tbody>
+              {this.renderData()}
+              <tr>
+                <td>NPS問卷調查 (UK)</td>
+                <td className="ing">正在收集回覆</td>
+                <td>2018年5月18日</td>
+                <td>2018年5月18日</td>
+                <td>未排定時間</td>
+                <td></td>
+              </tr>
               <tr>
                 <td>NPS問卷調查 (Taiwan)</td>
                 <td>未進行</td>
@@ -35,14 +60,6 @@ class AdminHome extends Component {
                 <td>完成</td>
                 <td>2018年5月17日</td>
                 <td>2018年5月17日</td>
-                <td>未排定時間</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>NPS問卷調查 (UK)</td>
-                <td>正在收集回覆</td>
-                <td>2018年5月18日</td>
-                <td>2018年5月18日</td>
                 <td>未排定時間</td>
                 <td></td>
               </tr>
