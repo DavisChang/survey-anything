@@ -63,7 +63,7 @@ class AdminContent extends Component {
     } else {
       return (<div>none</div>);
     }
-    
+
   }
 
   onChangeRadio = (event) => {
@@ -398,7 +398,7 @@ class AdminContent extends Component {
         return (
           <div className="AdminContent">
             <h1 className="title">報表</h1>
-            <Report />
+            <Report data={this.state} />
           </div>
         );
       case 'all':
