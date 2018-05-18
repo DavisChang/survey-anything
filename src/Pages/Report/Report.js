@@ -3,8 +3,8 @@ import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import { AreaChart, Area, BarChart, Bar, LineChart, Line, XAxis, YAxis,
   CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { Row, Col, Nav, NavItem, ButtonToolbar, ButtonGroup, Button, Glyphicon } from 'react-bootstrap';
-import { Route, Link } from "react-router-dom";
+import { Row, Col, Nav, NavItem, ButtonToolbar, ButtonGroup, Button } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 import './Report.css';
 import download from './download.svg';
 import copy from './copy.svg';
